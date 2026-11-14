@@ -1,0 +1,6 @@
+{
+  "name": "NovaChat AI",
+  "description": "A sleek, modern AI chat web application inspired by ChatGPT, powered by Google Gemini with Search Grounding, code syntax highlighting, and multi-turn conversations.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

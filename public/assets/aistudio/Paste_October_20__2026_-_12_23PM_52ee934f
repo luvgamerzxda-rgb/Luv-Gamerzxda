@@ -1,0 +1,837 @@
+# MASTER IMPLEMENTATION PROMPT: ADD A COMPLETE BACKGROUND MUSIC SYSTEM TO MY EXISTING AI CHAT APPLICATION
+
+## 1. YOUR ROLE
+
+Act as a senior full-stack software engineer, React and TypeScript specialist, UI/UX designer, audio-engineering specialist, and software testing engineer.
+
+You are modifying my EXISTING AI application inside Google AI Studio.
+
+Your task is to implement a complete, production-quality background music system that integrates into the current application without breaking, removing, replacing, or unnecessarily modifying existing features.
+
+Do not merely explain how to implement the feature. Inspect the existing project, make the actual code changes, integrate all required components, and verify the implementation.
+
+Do not create a separate demo application. Modify the existing application.
+
+Do not return only a sample component, pseudocode, or a list of instructions. Implement the feature throughout the project.
+
+If you have access to the project files and editing tools, use them to inspect and modify the real files.
+
+---
+
+# 2. MAIN OBJECTIVE
+
+Add a new setting called:
+
+**Background Music**
+
+The feature must provide a relaxing, immersive, PS5-inspired ambient audio experience while users interact with my AI application.
+
+I want calm, soft, atmospheric music similar in mood to the relaxing ambient soundscapes found in premium console interfaces.
+
+The music should feel peaceful, modern, spacious, subtle, and suitable for long AI chat sessions.
+
+The music must be designed for continuous listening. It should not unexpectedly stop, restart loudly, cut off between loop repetitions, or interrupt the user while chatting.
+
+IMPORTANT DISTINCTION:
+
+I want the mood and ambience of a premium console interface, not a copied PlayStation soundtrack. Use audio that I own, have licensed, or have permission to use. If no suitable audio asset is already available in the project, implement a system that supports user-provided audio and prepare an optional original ambient track only if the available tools support generating audio.
+
+Do not pretend that a nonexistent audio file has been created.
+
+---
+
+# 3. FIRST STEP: INSPECT THE EXISTING PROJECT
+
+Before changing any code, inspect the entire relevant project structure.
+
+Identify:
+
+- The main application component.
+- The current settings modal or settings page.
+- The existing theme and design system.
+- The application's global state management.
+- The current routing and navigation.
+- The AI chat interface and message input.
+- Existing audio, media, or file-upload utilities.
+- Any existing localStorage, IndexedDB, or persistence utilities.
+- The existing model and persona settings.
+- Existing TypeScript interfaces and shared types.
+- Existing application initialization and cleanup logic.
+- Any existing service worker or browser storage functionality.
+- The current build configuration and installed dependencies.
+
+Reuse the existing settings architecture.
+
+If a settings modal already exists, add a new Background Music tab or a clearly visible Background Music section within the existing settings interface. Choose the option that best fits the existing design.
+
+Do not create a duplicate settings modal.
+
+Do not replace the existing settings system.
+
+Do not remove any existing settings.
+
+Do not introduce an entirely new state-management library when the existing architecture is sufficient.
+
+Do not rewrite unrelated application files.
+
+If an existing audio implementation is present, improve or extend it rather than creating conflicting audio players.
+
+---
+
+# 4. REQUIRED MUSIC EXPERIENCE
+
+The background music must have the following behavior.
+
+## A. Continuous ambient playback
+
+- Provide relaxing ambient background music for the AI application.
+- Music should continue while the user navigates between chats, opens settings, changes personas, or switches between supported application sections.
+- Switching between chats must not restart the music.
+- Opening or closing the settings modal must not restart the music.
+- Changing the selected AI model must not restart the music.
+- Sending or receiving AI messages must not restart the music.
+- Changing the application's theme must not restart the music.
+- Normal React re-renders must not recreate the audio player or restart playback.
+- Music should continue until the user pauses it, disables it, changes the track, or closes the application.
+- Never create multiple simultaneous background music players.
+- Do not allow duplicate audio playback after hot reload, component remounting, or navigation.
+
+Create a persistent, application-level music controller that survives ordinary component re-renders.
+
+Do not put the only audio element inside a settings modal that unmounts when the modal closes.
+
+## B. Seamless infinite looping
+
+This is one of the most important requirements.
+
+The default background music should support continuous looping for as long as the application remains open.
+
+Use the browser's appropriate native audio capabilities, such as an HTMLAudioElement with looping enabled, or an equivalent reliable audio playback implementation.
+
+Requirements:
+
+- Enable looping for tracks that are intended to repeat.
+- Avoid gaps or silence between repetitions wherever technically possible.
+- Prevent sudden jumps in perceived volume.
+- Prevent abrupt cuts at loop boundaries.
+- Do not repeatedly create new audio elements to restart playback.
+- Do not repeatedly reload the same file at the end of each loop.
+- Avoid adding multiple overlapping copies of the same track.
+- Preserve the current playback state when the user opens and closes settings.
+- Handle the end of the track reliably.
+- Ensure that the music does not stop merely because an AI response starts or finishes.
+- Support continuous playback for long sessions.
+
+A crucial technical requirement: the loop point in the actual audio file must be suitable for looping. Simply setting loop=true cannot eliminate an audible discontinuity inside a poorly edited source file.
+
+If an audio asset has an audible beginning or ending, do not claim that looping it automatically creates a seamless loop.
+
+Where necessary and technically supported, implement a short configurable crossfade or another appropriate gap-reduction technique. Avoid crossfading two copies of the same audio in a way that causes excessive volume or phase problems.
+
+For ordinary music files, use the browser's native looping capability as the default reliable solution.
+
+If you cannot guarantee a perfectly seamless loop because of the source audio, explain the limitation in the UI or documentation without blocking the feature.
+
+## C. Calm volume by default
+
+Set a conservative default background volume, approximately 15–20% of the available volume range.
+
+The music must remain subtle and should not compete with the AI conversation.
+
+Implement smooth volume transitions when the user changes the volume or mutes the music.
+
+Avoid sudden loud playback.
+
+Do not automatically normalize the volume by increasing it to maximum.
+
+Remember that browser volume control and source-file loudness are different things, so use sensible default values.
+
+---
+
+# 5. ADD A DEDICATED BACKGROUND MUSIC SETTING
+
+Add a polished new section named:
+
+Background Music
+
+It should be accessible from the existing Settings interface.
+
+Use the application's existing visual identity. If the application already uses a dark theme with emerald accents, preserve that style.
+
+The music settings should feel like part of the existing product, not an unrelated third-party audio player.
+
+Include the following controls.
+
+## A. Master enable/disable switch
+
+Add a clearly visible toggle labeled:
+
+Background Music
+
+Supporting text:
+
+"Play relaxing ambient music while you use the app."
+
+When enabled:
+
+- Allow the configured track to play.
+- Respect browser autoplay restrictions.
+- Show the correct playback status.
+- Restore the saved preference when appropriate.
+
+When disabled:
+
+- Immediately stop audible background music.
+- Pause playback and release any unnecessary playback resources.
+- Prevent automatic playback from starting again until the user enables the feature.
+- Preserve the selected music track and saved volume.
+- Preserve the user's other music preferences.
+- Do not clear uploaded music.
+- Do not delete saved tracks.
+- Do not modify AI settings.
+
+The switch must have a real effect. It must not be a decorative control.
+
+Use accessible switch semantics, including appropriate ARIA attributes.
+
+## B. Playback controls
+
+Provide:
+
+- Play.
+- Pause.
+- Mute and unmute.
+- Previous track, when applicable.
+- Next track, when applicable.
+- Current track name.
+- Playback status.
+- Optional elapsed-time display and duration when the media format provides reliable duration information.
+
+Keep the controls compact and elegant.
+
+Do not show a fake progress bar that does not correspond to actual playback.
+
+When the current source is a live or indefinite audio stream, handle the missing duration gracefully.
+
+## C. Volume slider
+
+Add a volume slider ranging from 0 to 100.
+
+Display the current percentage.
+
+Requirements:
+
+- Default to approximately 20%.
+- Update playback volume immediately.
+- Use smooth volume transitions when appropriate.
+- Persist the selected volume.
+- Restore the volume after a reload.
+- Handle volume zero correctly.
+- Distinguish between a muted state and a saved volume of zero where appropriate.
+- Do not unexpectedly reset the volume when changing tracks.
+- Keep the slider accessible from the keyboard.
+- Add a meaningful accessible label.
+
+## D. Repeat mode
+
+Provide repeat behavior suitable for background ambience.
+
+At minimum, support:
+
+- Repeat current track.
+- Loop the selected ambient playlist, if a playlist is implemented.
+
+Use clear labels and indicate which repeat mode is active.
+
+Do not claim that a playlist feature exists unless it is actually implemented.
+
+For a single track, repeating the track must be straightforward and reliable.
+
+---
+
+# 6. USER-OWNED MUSIC UPLOAD
+
+Users must be able to use their own background music files.
+
+Add a section called:
+
+My Music
+
+Provide a button labeled:
+
+Upload Music
+
+Support common browser-playable audio formats, including:
+
+- MP3.
+- WAV.
+- OGG, where supported by the browser.
+- M4A/AAC, where supported by the browser.
+
+Use appropriate MIME and format checks. Do not rely exclusively on the filename extension.
+
+When a user uploads a file:
+
+1. Open the native file picker.
+2. Allow selection of one or more supported audio files, if the design supports a playlist.
+3. Validate that the selected file is plausibly an audio file.
+4. Reject unsupported or invalid files with a useful error message.
+5. Avoid crashing on malformed or unreadable audio.
+6. Add successfully imported tracks to the user's music library.
+7. Display the track name.
+8. Allow the user to select the track.
+9. Allow playback, pausing, and removal.
+10. Show a clear selected-track indicator.
+11. Handle duplicate uploads sensibly.
+12. Keep the rest of the application usable if an upload fails.
+
+Do not upload user music to an external server without explicit user consent.
+
+Do not transmit user audio to the AI model.
+
+Do not send music to analytics or telemetry.
+
+Do not silently overwrite existing files or settings.
+
+## A. Storage strategy
+
+Choose a suitable storage method based on the current project.
+
+For small files, IndexedDB or another suitable browser storage mechanism may be used.
+
+For larger files, prefer IndexedDB or a properly designed browser file-storage approach over storing binary audio as Base64 strings in localStorage.
+
+Do not store large audio files directly in localStorage.
+
+Use localStorage only for small preferences and metadata where appropriate.
+
+Persist the user's music library across normal page refreshes when technically supported.
+
+If IndexedDB is used:
+
+- Create a versioned database schema.
+- Handle database opening errors.
+- Handle transaction errors.
+- Handle quota errors.
+- Handle unavailable or private browsing storage.
+- Avoid loading every large audio file into memory unnecessarily.
+- Retrieve the selected audio file only when needed.
+- Revoke object URLs when they are no longer needed.
+- Avoid deleting a stored track while it is actively playing without handling the playback state.
+- Clean up resources correctly.
+
+If a persistent-storage API is unavailable, provide a useful fallback rather than crashing.
+
+If the current architecture makes IndexedDB integration impractical, explain the trade-off and choose the most reliable compatible implementation.
+
+## B. Music library interface
+
+Display uploaded tracks in a clean list or card layout.
+
+Each track should show:
+
+- Track name.
+- Optional file size.
+- Optional duration.
+- Selected or playing status.
+- A play or pause control.
+- A remove action.
+
+Add helpful empty-state text:
+
+"No music added yet. Upload your own audio to personalize your listening experience."
+
+Do not display fake tracks or pretend that uploaded files already exist.
+
+Allow a user to remove a track from the library with an appropriate confirmation if deletion would be consequential.
+
+If the removed track is currently playing, stop it safely, release its resources, and choose a valid fallback state.
+
+Never delete unrelated tracks when one track is removed.
+
+---
+
+# 7. DEFAULT AMBIENT TRACK
+
+The initial experience should support a relaxing, console-inspired ambient track.
+
+The desired sound characteristics are:
+
+- Calm.
+- Spacious.
+- Soft.
+- Minimal.
+- Futuristic.
+- Warm.
+- Atmospheric.
+- Non-distracting.
+- Suitable for studying, working, reading, and long AI conversations.
+- No sudden loud impacts.
+- No abrupt changes in intensity.
+- No vocals unless the user explicitly selects a vocal track.
+- No distracting notifications mixed into the music.
+- No sudden ending.
+
+The default experience should feel inspired by a premium gaming console's quiet interface ambience.
+
+However:
+
+- Do not copy an existing PlayStation soundtrack.
+- Do not extract audio from PS5 system files.
+- Do not download copyrighted audio without authorization.
+- Do not bundle copyrighted music without permission.
+- Do not invent a file path to a nonexistent audio asset.
+- Do not show a track as available unless its actual audio source exists and can be played.
+
+If an original, licensed ambient track already exists in the project, use it.
+
+Otherwise, build the full playback system so that a user can immediately upload their own audio.
+
+If audio generation is available in the environment, an original ambient track may be created using appropriate tools. Do not use image generation or pretend that image generation creates audio.
+
+If no audio asset is available, show a useful empty/default state and explain how to add music.
+
+The application must still compile and function correctly without a bundled default audio file.
+
+---
+
+# 8. PLAYBACK AND BROWSER AUTOPLAY RESTRICTIONS
+
+Modern browsers often prevent audible autoplay before a user interacts with the page.
+
+Respect this behavior.
+
+Do not attempt to bypass browser autoplay restrictions.
+
+When the user enables background music but playback is blocked:
+
+- Keep the setting enabled if that matches the application's intended semantics.
+- Display a helpful message such as "Click Play to start background music."
+- Show a working Play button.
+- Resume playback only after a valid user interaction.
+- Do not enter an endless retry loop.
+- Do not spam error messages.
+- Do not continuously reload the audio source.
+- Do not use deceptive or invisible controls to simulate user interaction.
+
+Handle rejected play() promises correctly.
+
+Distinguish between:
+
+- Playback successfully started.
+- Playback is paused.
+- Playback is blocked by autoplay policy.
+- A track failed to load.
+- A track format is unsupported.
+- The source is unavailable.
+- The music is disabled by the user.
+
+Use appropriate user-facing feedback for each state.
+
+---
+
+# 9. GLOBAL AUDIO ARCHITECTURE
+
+Implement the audio system using the existing application architecture.
+
+Prefer a centralized audio controller, context, or service that owns the single active playback instance.
+
+Avoid scattering independent audio elements across the application.
+
+The controller should manage:
+
+- Current track.
+- Playback state.
+- Master enabled state.
+- Volume.
+- Mute state.
+- Repeat mode.
+- Track selection.
+- User-uploaded tracks.
+- Persistent preferences.
+- Playback errors.
+- Loading state.
+- Resource cleanup.
+
+The settings UI should communicate with the controller through a clear API.
+
+Use React state and effects correctly.
+
+Avoid:
+
+- Creating an audio object on every render.
+- Adding duplicate event listeners.
+- Missing effect cleanup.
+- Repeated calls to play() caused by changing state.
+- Infinite effect loops.
+- Stale closures.
+- State updates after component unmount.
+- Memory leaks from object URLs.
+- Multiple audio players playing at once.
+- Stale references to removed tracks.
+
+Do not create a new audio context or audio element unnecessarily.
+
+If Web Audio API is used for advanced crossfading, make it optional and robust. Native HTML audio should remain the simpler fallback where appropriate.
+
+Keep all audio operations client-side unless the existing application explicitly requires otherwise.
+
+Do not connect audio playback to AI generation or API calls.
+
+---
+
+# 10. MUSIC PERSISTENCE
+
+Persist user preferences across page reloads.
+
+At minimum, save:
+
+- Background music enabled/disabled.
+- Selected track identifier.
+- Volume.
+- Mute state.
+- Repeat mode.
+
+Use the project's existing settings persistence utilities if available.
+
+Otherwise, use a suitable storage mechanism for preferences, such as localStorage, with error handling.
+
+Do not overwrite other settings stored by the application.
+
+Do not clear all localStorage to reset music settings.
+
+Use a namespaced key such as:
+
+novachat.backgroundMusic.settings
+
+Adapt the namespace to the actual project name if necessary.
+
+Restore saved settings safely during initialization.
+
+Validate persisted data before using it. Handle malformed JSON, missing fields, invalid volume values, and outdated settings versions.
+
+Do not assume that a selected track still exists. If the track has been removed or is unavailable, fall back to a safe state and show an appropriate message.
+
+Important distinction:
+
+Saving the enabled preference does not mean that audible playback must automatically begin before user interaction. Respect browser autoplay restrictions and provide a clear way to start playback.
+
+---
+
+# 11. INTERFACE DESIGN
+
+The new interface should be visually polished and consistent with my existing AI app.
+
+Use the existing design system and styling approach.
+
+If the app already has a dark theme, retain it.
+
+Use subtle surfaces, elegant spacing, restrained accent colors, clean typography, and clear visual hierarchy.
+
+Avoid an oversized or distracting audio dashboard.
+
+The background music feature should complement the AI chat experience.
+
+The settings section should contain:
+
+1. A heading and short description.
+2. A master music toggle.
+3. A now-playing panel.
+4. Playback controls.
+5. A volume slider.
+6. Repeat controls.
+7. A user music library.
+8. An upload button.
+9. Useful status and error messages.
+
+Use consistent button sizes and spacing.
+
+Use clear active and inactive states.
+
+Provide hover, focus, and disabled states.
+
+Make the interface responsive on desktop, tablet, and mobile.
+
+Avoid horizontal overflow.
+
+Provide keyboard-accessible controls.
+
+Use meaningful ARIA labels.
+
+Respect reduced-motion preferences for animations.
+
+Do not rely on color alone to communicate status.
+
+Do not use fake buttons, placeholder interactions, or decorative toggles that do not perform real actions.
+
+If an icon library is already installed, reuse it rather than installing another one.
+
+---
+
+# 12. ACCESSIBILITY AND USER CONTROL
+
+The user must always remain in control of audio playback.
+
+Requirements:
+
+- Never force audio playback after the user disables music.
+- Never automatically turn music back on after the user explicitly turns it off.
+- Never reset a user's saved volume without a clear reason.
+- Do not make sound mandatory for using the AI application.
+- Provide a clear mute action.
+- Ensure keyboard users can reach all controls.
+- Ensure focus indicators are visible.
+- Give buttons meaningful accessible labels.
+- Ensure status messages are understandable.
+- Do not make a disabled music feature block AI chat functionality.
+
+If the user disables music, the rest of the application must continue working normally.
+
+---
+
+# 13. RESOURCE MANAGEMENT AND PERFORMANCE
+
+Background music should have a low performance cost.
+
+Requirements:
+
+- Use one active playback instance.
+- Avoid unnecessary audio decoding.
+- Avoid loading the entire music library into memory.
+- Avoid base64 encoding large files.
+- Clean up audio event listeners.
+- Revoke object URLs when appropriate.
+- Release audio resources when no longer needed.
+- Avoid unnecessary re-renders of the entire chat interface.
+- Avoid unnecessary network requests.
+- Do not reload audio files when opening settings.
+- Do not block AI requests while music is loading.
+- Do not delay the initial rendering of the application while audio loads.
+- Handle a track being removed while selected or playing.
+- Handle the browser tab becoming hidden or visible without creating duplicate players.
+- Respect the user's enabled setting and the browser's media behavior.
+
+Do not automatically pause music simply because the user switches between chats.
+
+Do not automatically resume music after the user has explicitly disabled it.
+
+If the browser suspends playback or audio resources, handle recovery gracefully.
+
+---
+
+# 14. ERROR HANDLING
+
+Handle all of the following without crashing the application:
+
+- Audio file missing.
+- Invalid audio file.
+- Unsupported audio codec.
+- File read failure.
+- IndexedDB unavailable.
+- IndexedDB quota exceeded.
+- Browser storage blocked.
+- Corrupt saved preferences.
+- Invalid saved track identifier.
+- Failed audio loading.
+- Rejected playback promise.
+- Playback interrupted.
+- User removes the currently playing track.
+- User changes tracks quickly.
+- User disables music while a track is loading.
+- Component unmount during playback.
+- Repeated enable/disable actions.
+- Page reload.
+- Browser tab visibility changes.
+
+Show concise, helpful messages.
+
+Log technical details in development mode when appropriate, but do not expose sensitive local file paths or unnecessary implementation details to users.
+
+Do not silently swallow all errors.
+
+Do not display an error when normal browser autoplay restrictions are the only issue; explain that a user click is needed.
+
+---
+
+# 15. STRICT COMPATIBILITY REQUIREMENTS
+
+Preserve all existing application functionality.
+
+Do not break:
+
+- AI chat.
+- Streaming AI responses.
+- Message history.
+- Chat creation.
+- Chat deletion.
+- Chat export.
+- Persona selection.
+- Model selection.
+- Custom system instructions.
+- Search grounding.
+- Memory Vault.
+- Memory creation and deletion.
+- Memory correction proposals.
+- Memory approval and rejection.
+- Audit logs.
+- Existing settings persistence.
+- Existing authentication, if present.
+- Existing routing.
+- Existing theme.
+- Existing API endpoints.
+- Existing TypeScript types.
+- Existing responsive layout.
+
+Do not rename public component props without a compelling reason.
+
+Do not remove existing settings tabs.
+
+Do not replace real functionality with mock data.
+
+Do not install unnecessary dependencies.
+
+Do not modify server configuration unless necessary for the feature.
+
+Do not hardcode API keys or credentials.
+
+Do not introduce a dependency on a paid service just to play local music.
+
+Do not change the AI model provider or API behavior.
+
+If a new shared type is needed, add it in the appropriate existing types file.
+
+If a new audio service or hook is needed, place it in the appropriate existing directory.
+
+Follow the naming and code organization conventions already used by the project.
+
+---
+
+# 16. RECOMMENDED IMPLEMENTATION STRUCTURE
+
+Adapt this structure to the existing repository rather than creating unnecessary files:
+
+- A global background music provider or controller.
+- A reusable background music hook or service.
+- A settings UI section for background music.
+- A persistent music preference model.
+- A user music library backed by suitable browser storage.
+- A small set of reusable playback controls.
+
+Possible logical responsibilities:
+
+Music controller:
+- Own the active audio player.
+- Manage play, pause, mute, volume, repeat, and track changes.
+- Emit state changes to React components.
+- Handle errors and cleanup.
+
+Music storage service:
+- Save and retrieve user-uploaded tracks.
+- Persist track metadata.
+- Handle database upgrades and quota failures.
+- Remove individual tracks safely.
+
+Music settings:
+- Display playback controls.
+- Upload and manage music.
+- Change persistent preferences.
+- Display playback status and errors.
+
+Use these as architectural guidelines, not as a requirement to create files that duplicate existing services.
+
+---
+
+# 17. TESTING REQUIREMENTS
+
+After implementing the feature, inspect the resulting code and run the relevant checks available in the project.
+
+At minimum, verify:
+
+1. The application compiles.
+2. TypeScript types are correct.
+3. The settings modal still opens and closes.
+4. Existing tabs still work.
+5. The Background Music section is accessible.
+6. The music toggle actually enables and disables playback.
+7. Play and pause work.
+8. Volume changes affect the audio.
+9. Mute and unmute work.
+10. Track selection works.
+11. Supported audio uploads work.
+12. Invalid files show useful errors.
+13. User tracks persist after refresh when storage supports persistence.
+14. Music preferences persist after refresh.
+15. Looping does not create duplicate audio players.
+16. Opening settings does not restart the music.
+17. Switching chats does not restart the music.
+18. Disabling music prevents unintended playback.
+19. Removing a track releases its resources.
+20. AI chat still works with music disabled.
+21. The layout works on narrow and wide screens.
+22. Browser autoplay restrictions are handled correctly.
+
+Use the project's existing test framework if available.
+
+Do not claim that a test passed unless it was actually executed.
+
+If a check cannot be run in the environment, identify it as unverified.
+
+Do not stop at writing code. Review the integration and fix issues discovered during implementation.
+
+---
+
+# 18. ACCEPTANCE CRITERIA
+
+The implementation is complete only when:
+
+- A dedicated Background Music setting exists.
+- The user can enable and disable music.
+- Playback controls work.
+- Volume and mute work.
+- Continuous looping works for suitable audio assets.
+- The user can upload their own supported audio files.
+- The user can select and remove uploaded tracks.
+- User music can persist across reloads when browser storage permits it.
+- Music settings persist safely.
+- Music is controlled by a single application-level playback controller.
+- Normal navigation does not restart playback.
+- Autoplay restrictions are handled correctly.
+- The music system does not interfere with AI requests or responses.
+- The interface matches the existing application design.
+- The implementation does not require a copyrighted PS5 soundtrack.
+- The application remains functional when no default audio file is available.
+- Existing features remain intact.
+- Relevant available tests and build checks have been run.
+
+---
+
+# 19. FINAL EXECUTION INSTRUCTIONS
+
+Now inspect my existing project and implement this feature directly.
+
+Work in this order:
+
+1. Inspect the existing architecture and settings implementation.
+2. Identify the safest integration points.
+3. Implement the global audio controller.
+4. Implement the new Background Music settings UI.
+5. Implement user audio uploads and suitable persistent storage.
+6. Integrate playback preferences with the existing settings system.
+7. Handle browser restrictions, errors, and resource cleanup.
+8. Run the available build and type checks.
+9. Fix issues discovered during verification.
+10. Summarize the exact files changed and the functionality implemented.
+
+Do not replace the entire application with a new project.
+
+Do not remove existing functionality to simplify the task.
+
+Do not stop after describing the solution.
+
+Do not claim that audio is available when no playable audio asset exists.
+
+If a decision depends on the current codebase, inspect the code and choose the safest compatible approach.
+
+If something genuinely cannot be completed because the environment lacks an asset, tool, or capability, implement everything else that can be completed and clearly identify the remaining limitation.
+
+The goal is a real, integrated, maintainable, polished background music feature in my existing AI application.

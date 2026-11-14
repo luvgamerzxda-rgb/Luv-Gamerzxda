@@ -1,0 +1,1342 @@
+# NOVACHAT AI — COMPLETE MASTER PROMPT
+## Full PS5-Inspired UI Redesign, Original Logo Enhancement, Animated Ambient Waves, Background Music, UI Sound Effects, and Settings Integration
+
+You are working on my existing **NovaChat AI application**. I want you to transform its user interface into a polished, premium, cinematic experience inspired by the atmosphere, visual quality, smooth animations, and sound design of the PlayStation 5 home screen.
+
+My current UI looks boring and too basic. I want it to feel like a modern, futuristic, high-quality AI product—not an ordinary chatbot website with a plain background, basic buttons, and generic cards.
+
+**IMPORTANT: Do not just describe the changes, create a static image, or give me a design concept. Actually implement the changes in my existing application and make sure the features work.**
+
+Treat this as a complete, coordinated redesign of the existing NovaChat AI product. Combine the visual redesign, logo enhancement, animated background, background music, UI sound effects, and settings controls into one consistent experience.
+
+Do not unnecessarily rebuild the entire application from scratch. First inspect the existing project, understand its framework, components, routes, state management, settings, API integrations, and file structure. Then implement the redesign using the existing architecture wherever possible.
+
+---
+
+# PHASE 1 — INSPECT THE EXISTING PROJECT AND PRESERVE ITS FUNCTIONALITY
+
+Before changing anything, inspect the existing application and identify:
+
+- The current application structure and framework.
+- The main layout, navigation, sidebar, chat screen, home screen, and settings screen.
+- Existing model selection and AI response functionality.
+- Existing API integrations and backend connections.
+- Existing chat history, conversation creation, and conversation switching.
+- Existing user settings and persistence mechanisms.
+- Existing persona selection, model selection, search-grounding settings, and other configuration options.
+- Existing memory features, including enabling or disabling memory, manually adding memories, removing memories, clearing memories, reviewing memory corrections, and viewing audit history, if these features are present.
+- Existing chat export and chat-clearing functionality.
+- Existing logo assets, icons, fonts, and reusable components.
+- Existing audio assets, if any.
+- Existing responsive behavior on desktop, tablet, and mobile.
+
+Use the existing implementation as the source of truth. Do not assume that a feature is missing just because it is not visible on the home screen.
+
+## Non-negotiable preservation requirements
+
+1. Preserve all existing working features, including AI conversations, model selection, settings, chat history, backend requests, memory functionality, and data persistence.
+2. Do not replace real AI functionality with hardcoded responses, fake data, or simulated chat interactions.
+3. Do not remove existing settings or backend integrations merely to simplify the redesign.
+4. Do not replace functional controls with decorative buttons.
+5. Do not break existing API endpoints, types, routes, state management, or data structures.
+6. Avoid unnecessary dependency installations and avoid introducing a new framework if the current framework can support the design.
+7. Reuse existing components when appropriate, but improve their styling and behavior.
+8. If an existing feature cannot be preserved exactly because of a technical limitation, explain the limitation rather than silently removing it.
+9. Keep the application usable throughout the redesign. Fix any regressions introduced by your changes.
+10. Implement actual working code, not pseudocode, placeholder components, or instructions for me to implement manually.
+
+My application is called **NovaChat AI**. Preserve that identity throughout the interface.
+
+---
+
+# PHASE 2 — CREATE A PREMIUM PLAYSTATION 5-INSPIRED VISUAL EXPERIENCE
+
+## 2.1 Overall design direction
+
+Use the PlayStation 5 home screen as inspiration for the overall atmosphere and presentation. Do not copy Sony's proprietary interface pixel-for-pixel or use PlayStation trademarks as if this were an official PlayStation product.
+
+The goal is to capture the same sense of:
+
+- Premium console-like presentation.
+- Cinematic dark backgrounds.
+- Elegant gradients and ambient lighting.
+- Smooth transitions and animations.
+- Spacious, uncluttered layouts.
+- Beautifully layered interface elements.
+- Subtle glass effects.
+- Sophisticated blue and violet highlights.
+- Immersive, atmospheric visual depth.
+- A cohesive experience across the home screen, chat interface, and settings.
+
+The final result should look like a high-end futuristic AI application with a distinctive visual identity of its own.
+
+## 2.2 Color palette
+
+Use a consistent dark, cinematic color palette.
+
+Suggested colors:
+
+- Deep midnight navy: `#050816`
+- Dark blue-black: `#080D1C`
+- Secondary navy: `#0C1430`
+- Electric cyan: `#00D9FF`
+- Nova blue: `#3285FF`
+- Indigo: `#493CFF`
+- Violet: `#8757FF`
+- Soft white: `#F4F7FF`
+- Muted secondary text: `#A5B0CA`
+- Subtle borders: translucent blue-white.
+
+These values are starting points, not rigid requirements. Adjust them where necessary to achieve the best visual result.
+
+Avoid a completely flat black screen. Build visual depth through carefully layered gradients, soft glows, atmospheric lighting, and restrained transparency.
+
+Use cyan, blue, and violet as accent colors. Do not make every element glow brightly; the overall experience should remain elegant rather than flashy.
+
+## 2.3 Background and atmospheric lighting
+
+Create a beautiful dark background that feels alive and dimensional.
+
+Use a combination of:
+
+- Deep navy and indigo gradient layers.
+- Soft blue and cyan ambient light.
+- Subtle violet illumination.
+- Large blurred radial gradients.
+- Gentle lighting behind the logo or main hero area.
+- Carefully placed translucent visual layers.
+- Optional fine-grain texture, provided it does not create distracting noise or performance problems.
+
+The lighting should appear to exist behind the application, not on top of the content.
+
+Do not use a plain solid background as the entire visual design.
+
+Do not place an unrelated stock photograph behind the entire interface.
+
+Do not use a large static background image as a substitute for the actual animated waves required later in this prompt.
+
+## 2.4 Layout and spacing
+
+Create a more intentional and premium layout.
+
+Use generous spacing, clear alignment, consistent margins, and a carefully defined hierarchy.
+
+The interface should not look overcrowded. Every element should have a purpose.
+
+Use a consistent design system for:
+
+- Page padding.
+- Sidebar width.
+- Header height.
+- Card spacing.
+- Button dimensions.
+- Border radius.
+- Typography.
+- Icon sizes.
+- Focus states.
+- Modal dimensions.
+- Animation timing.
+
+The home screen should feel cinematic and welcoming. The chat screen should prioritize readability and productivity. The settings screen should feel like a polished control center.
+
+Maintain a consistent visual identity across every screen.
+
+## 2.5 Glassmorphism and layered surfaces
+
+Use restrained glassmorphism where appropriate.
+
+For panels, cards, popovers, and settings sections, consider:
+
+- Semi-transparent dark backgrounds.
+- Subtle backdrop blur.
+- Thin translucent borders.
+- Soft shadows.
+- Gentle cyan or blue edge illumination.
+- Smooth hover transitions.
+- Clear visual separation from the background.
+
+Do not apply heavy blur to every element. Too much glassmorphism can reduce readability and make the UI look cluttered.
+
+Text and controls must remain easy to read.
+
+Use glass effects primarily for floating panels, selected elements, and important interface surfaces rather than making the entire screen transparent.
+
+## 2.6 Typography
+
+Use clean, modern, readable typography.
+
+Create a clear hierarchy between:
+
+- Main page titles.
+- Section headings.
+- Chat messages.
+- Supporting descriptions.
+- Button labels.
+- Metadata.
+- Settings labels.
+- Secondary information.
+
+Use slightly larger, expressive headings where they improve the cinematic feel, but keep normal interface text practical and readable.
+
+Do not use excessively futuristic fonts that are difficult to read.
+
+If the project already has a good font setup, improve it rather than unnecessarily adding many fonts.
+
+## 2.7 Buttons and interactive controls
+
+Redesign buttons to feel modern and responsive.
+
+Primary buttons may use a blue-to-cyan gradient or a controlled accent glow. Secondary buttons should use dark translucent surfaces with subtle borders.
+
+Implement:
+
+- Smooth hover transitions.
+- Subtle press feedback.
+- Clear disabled states.
+- Visible keyboard focus.
+- Consistent icon placement.
+- Appropriate loading states.
+- Clear visual distinction between primary, secondary, destructive, and selected actions.
+
+Do not make every button glow or animate continuously.
+
+Buttons must continue performing their real actions.
+
+## 2.8 Cards and panels
+
+Give cards depth without making them unnecessarily large.
+
+Use subtle gradients, restrained borders, and smooth transitions.
+
+For hover effects, use small changes in brightness, border color, or elevation rather than aggressive scaling.
+
+Cards should be visually consistent, and their content should remain readable against the background.
+
+Avoid excessive rounded rectangles everywhere. Choose corner radii deliberately according to the component's purpose.
+
+---
+
+# PHASE 3 — REDESIGN THE NOVACHAT AI HOME SCREEN
+
+Create a premium landing or home screen for NovaChat AI that feels immersive and thoughtfully designed.
+
+The screen should immediately communicate that NovaChat AI is a modern AI assistant.
+
+## 3.1 Hero section
+
+Create a visually impressive hero section featuring:
+
+- The original NovaChat logo.
+- The NovaChat AI name.
+- A short, elegant introductory message.
+- A prominent input area for starting a conversation.
+- A clear primary action.
+- Optional suggested prompts or useful shortcuts.
+- Subtle atmospheric blue and violet lighting.
+- The animated ambient waves described in Phase 5.
+
+Use the available screen space effectively. The hero should feel intentional and cinematic rather than like a generic website template.
+
+The input area should be prominent, easy to use, and connected to the existing real chat functionality.
+
+When the user submits a message, use the application's existing conversation flow. Do not create a separate fake chat experience for the redesigned home screen.
+
+## 3.2 Suggested prompts and shortcuts
+
+If the existing product supports suggested prompts, display them as elegant interactive elements.
+
+Examples may include:
+
+- Explain a difficult topic.
+- Help me write something.
+- Summarize information.
+- Help me brainstorm ideas.
+- Assist with coding.
+
+These are examples, not hardcoded mandatory features.
+
+Use the application's actual capabilities. Any shortcut displayed must lead to a working action.
+
+## 3.3 Visual balance
+
+Keep the hero clean.
+
+Do not fill the entire screen with cards, statistics, unnecessary descriptions, or decorative text.
+
+The logo, main input, and primary action should be the most noticeable elements.
+
+The background waves should support the hero instead of competing with it.
+
+---
+
+# PHASE 4 — REDESIGN THE CHAT INTERFACE
+
+The chat interface must retain the practicality of a real AI application while matching the new cinematic visual identity.
+
+## 4.1 Sidebar
+
+Create a polished dark sidebar with:
+
+- NovaChat branding.
+- A prominent new-chat action.
+- Existing conversation history.
+- Appropriate conversation actions.
+- Access to settings.
+- Existing navigation options, where applicable.
+
+Use subtle separators and carefully controlled highlights.
+
+The selected conversation should be easy to identify through a refined background, border, or accent indicator.
+
+Hover states should be smooth and understated.
+
+Preserve the actual conversation history and switching behavior. Do not replace stored conversations with sample entries.
+
+If the sidebar can collapse in the existing application, preserve that functionality and redesign the collapsed state as well.
+
+## 4.2 Chat header
+
+Create a clean header that shows relevant information such as:
+
+- The current conversation title.
+- The selected model, if supported.
+- Existing conversation actions.
+- Sidebar controls.
+- Other useful existing controls.
+
+Do not overcrowd the header.
+
+Use consistent icon sizes and alignment.
+
+## 4.3 Chat messages
+
+Give user messages and assistant messages a clear visual distinction.
+
+Use subtle surfaces, restrained borders, and appropriate spacing.
+
+Avoid oversized chat bubbles that unnecessarily restrict the available reading width.
+
+Ensure that long answers, code blocks, tables, lists, and formatted text remain readable.
+
+Preserve the application's existing Markdown rendering and code-display functionality, if present.
+
+Make code blocks easy to distinguish from normal messages. Keep syntax highlighting readable in the dark theme.
+
+Ensure that long conversations scroll correctly.
+
+## 4.4 Message composer
+
+Create a premium message composer with:
+
+- A comfortable text-entry area.
+- A clear send button.
+- Existing attachment or tool controls, if supported.
+- Appropriate disabled and loading states.
+- A clear focus state.
+- Subtle blue or cyan illumination when focused.
+- Proper behavior for multiline text.
+
+The composer should feel like an integrated part of the application rather than a generic form field.
+
+Keep the message-entry experience fast and practical.
+
+Preserve keyboard shortcuts and submission behavior already supported by the application.
+
+## 4.5 Streaming and loading states
+
+If the application supports streaming AI responses, preserve streaming.
+
+Use subtle loading indicators or progress animations where appropriate.
+
+Do not freeze the interface while waiting for a response.
+
+Do not replace real response streaming with fake typing animations.
+
+Make it clear when a response is being generated, when generation is complete, and when an error occurs.
+
+## 4.6 Navigation consistency
+
+The sidebar, chat header, composer, and settings should share the same design language.
+
+Transitions between the home screen and chat screen should feel smooth without introducing unnecessary delays.
+
+Do not reset the conversation, reload the application, or restart the background music simply because the user navigates between screens.
+
+---
+
+# PHASE 5 — IMPLEMENT REAL, CONTINUOUSLY ANIMATED AMBIENT WAVES
+
+This phase is extremely important.
+
+The waves shown in my visual reference are currently only visual concepts. I want them implemented as **actual animated background effects inside the application**.
+
+Do not use a static screenshot, a single still image, or a decorative image pretending to be animation.
+
+## 5.1 Desired appearance
+
+Create cinematic ambient light waves inspired by the atmosphere of a premium console home screen.
+
+The waves should use layered shades of:
+
+- Deep blue.
+- Electric blue.
+- Cyan.
+- Indigo.
+- Violet.
+
+Imagine soft flowing ribbons of light moving through a dark, atmospheric environment behind the UI.
+
+The effect should be smooth, sophisticated, and subtle.
+
+The background should feel alive without distracting the user from reading or typing.
+
+## 5.2 Implementation approach
+
+Choose the most appropriate lightweight technique for the existing project.
+
+Possible techniques include:
+
+- CSS gradients with animated positioning.
+- Layered CSS pseudo-elements.
+- CSS transforms and opacity animations.
+- SVG shapes with controlled animation.
+- A lightweight canvas implementation, only if necessary.
+
+Prefer CSS or another efficient solution when it can achieve the desired result.
+
+Do not add a heavy animation framework merely to create simple ambient waves.
+
+Use several independently layered visual elements to create depth.
+
+For example, one layer can create a broad blue glow, another can create a slowly flowing cyan ribbon, and another can add a soft violet highlight.
+
+The exact technique is up to you, provided the final result looks polished and performs well.
+
+## 5.3 Motion and continuity
+
+The waves must move continuously and smoothly.
+
+Use slow, atmospheric movement rather than fast or distracting motion.
+
+Avoid:
+
+- Sudden jumps.
+- Visible animation restarts.
+- Abrupt changes in direction.
+- Flashing.
+- Excessive brightness.
+- Rapid color cycling.
+- Distracting movement behind text.
+
+Use carefully chosen animation durations, easing, and layered motion to reduce the appearance of repetition.
+
+If a loop is used, make its start and end states visually compatible so the restart is difficult to notice.
+
+The movement should feel like ambient environmental motion, not an attention-grabbing animation.
+
+## 5.4 Layering and interaction
+
+The animated waves must remain behind all interactive content.
+
+They must not block:
+
+- Buttons.
+- Inputs.
+- Menus.
+- Modals.
+- Chat messages.
+- Sidebar controls.
+- Keyboard interaction.
+- Pointer events.
+
+Use appropriate stacking contexts and pointer-event behavior.
+
+Ensure that text remains readable regardless of the waves' positions.
+
+The animation should not cause layout shifts, accidental scrolling, or changes in the size of interface elements.
+
+## 5.5 Navigation persistence
+
+The background animation should remain visually consistent while the user navigates between the home screen, chat screen, and settings.
+
+Avoid unnecessarily unmounting and restarting the entire background animation whenever the active route or view changes.
+
+Where practical, implement the animated background as a shared layout-level component.
+
+The animation must be independent of the background music. Muting music must not stop the waves, and disabling the waves must not stop the music.
+
+## 5.6 Settings control for ambient waves
+
+Add a real setting that allows users to enable or disable the animated ambient waves.
+
+The control should:
+
+- Clearly identify the feature.
+- Reflect its current state.
+- Work immediately when changed.
+- Persist the user's preference using the application's existing settings-persistence mechanism.
+- Restore the saved preference when the application is reopened.
+- Avoid breaking the rest of the background styling when disabled.
+
+When disabled, remove or stop the animated wave effects and retain a clean, attractive static dark gradient background.
+
+Do not disable other parts of the interface when this option is turned off.
+
+## 5.7 Accessibility and performance
+
+Respect the operating system's `prefers-reduced-motion` setting.
+
+When reduced motion is requested, reduce or disable continuous movement while retaining a visually appealing background.
+
+Keep CPU and GPU usage low.
+
+Prefer animating efficient properties such as transforms and opacity where appropriate. Avoid expensive full-screen effects that continuously trigger unnecessary layout or painting.
+
+Consider weaker devices and mobile browsers.
+
+The waves should not cause the application to become hot, laggy, or unresponsive.
+
+Test performance with a long conversation open and while navigating between screens.
+
+---
+
+# PHASE 6 — PRESERVE AND ENHANCE THE ORIGINAL NOVACHAT LOGO
+
+The existing NovaChat logo is important to the identity of my application.
+
+My original logo has a distinctive inverted-V or triangular geometry. It represents my own identity and must remain recognizable.
+
+**Do not replace it with an unrelated generic N icon, a different triangle, a PlayStation logo, or a completely new symbol.**
+
+Use the original logo asset or original logo component already present in the project as your source.
+
+## 6.1 Preserve the original geometry
+
+Keep the original symbol's essential shape, proportions, direction, and recognizable structure.
+
+The aim is to refine the existing logo, not invent an unrelated logo.
+
+You may improve its presentation, stroke quality, spacing, proportions, and lighting, but the underlying symbol must remain recognizably the same.
+
+## 6.2 Slightly lengthen the lines
+
+I want the original logo's lines to be slightly longer.
+
+Make a restrained adjustment that gives the logo a more elegant and futuristic appearance.
+
+Do not extend the lines excessively.
+
+Do not distort the original angles.
+
+Do not make the symbol look like an entirely different letter or icon.
+
+Preserve the original inverted-V or triangular identity.
+
+## 6.3 Cyan-blue-violet gradient
+
+Apply a polished gradient treatment using cyan, blue, and violet.
+
+The gradient should look smooth and premium.
+
+Possible direction:
+
+- Cyan near one end of the strokes.
+- Electric blue through the middle.
+- Violet near the other end.
+
+Adjust the gradient direction to complement the actual logo geometry.
+
+Do not make the logo excessively rainbow-colored.
+
+Use a controlled glow that enhances the symbol against the dark background.
+
+## 6.4 Subtle glow
+
+Add a soft, restrained outer glow using the logo's cyan and blue tones, with violet accents where appropriate.
+
+The glow should help the logo stand out without washing out its shape.
+
+Avoid an excessively thick neon outline or a large blurry glow that makes the logo difficult to recognize.
+
+Keep the central logo geometry crisp.
+
+## 6.5 SVG and scalability
+
+If the existing logo can reasonably be represented as SVG, create or refine a scalable SVG implementation.
+
+Use the original geometry as the source of truth.
+
+If multiple logo variants are useful, support:
+
+- A standard logo for ordinary interface use.
+- A slightly brighter version for the home screen.
+- A compact version for the sidebar or small application icon.
+
+All variants must preserve the same core identity.
+
+Do not introduce inconsistent shapes between variants.
+
+If the logo currently exists as an image asset and cannot safely be converted without losing important details, preserve that asset and refine its presentation instead.
+
+## 6.6 Logo animation
+
+Any logo animation should be optional, subtle, and tasteful.
+
+A gentle entrance, a soft change in illumination, or a restrained gradient treatment may be appropriate.
+
+Do not make the logo spin continuously, flash, or distract from the interface.
+
+Keep the logo readable and recognizable at every size.
+
+## 6.7 Asset preservation
+
+Do not overwrite or destroy the only copy of the original logo.
+
+Keep the original asset available in the project so the changes can be adjusted later.
+
+Use the refined logo consistently throughout the application.
+
+---
+
+# PHASE 7 — ADD THE EXACT BACKGROUND MUSIC FILE
+
+I want my application to have background music that contributes to the premium, immersive atmosphere.
+
+The specific audio file I want to use is:
+
+**`003. Home Menu.mp3`**
+
+This is my chosen music track because I want the application to have the same kind of calm, atmospheric home-screen feeling that I associate with the PS5 menu.
+
+## 7.1 Use the exact supplied track
+
+Use `003. Home Menu.mp3` as the background music asset.
+
+If the file has not yet been added to the project, tell me to upload or add that exact file to the project's assets, then use the uploaded file.
+
+Do not silently substitute:
+
+- A different song.
+- Generic background music.
+- A random audio URL.
+- A synthesized replacement.
+- An unrelated stock track.
+- A different file merely because it has a similar name.
+
+Do not claim the music has been implemented until the correct file is actually available and connected to the application.
+
+Keep the file referenced through the project's proper asset-handling system.
+
+Do not rely on a local absolute file path from my computer.
+
+## 7.2 Default music volume: 20%
+
+Set the default background music volume to exactly **20%**.
+
+The effective initial music volume should be `0.20` on the standard 0-to-1 HTML audio volume scale.
+
+For example, if using an HTML audio element, an initial volume setting may be equivalent to:
+
+`audio.volume = 0.20`
+
+Adapt the implementation to the framework and audio architecture actually used by the project.
+
+The setting must affect real playback, not merely display the number 20%.
+
+Do not set the default music volume to 50%, 70%, or 100%.
+
+The required default is 20%.
+
+## 7.3 Music controls
+
+Add functional background music controls to the application's settings.
+
+Include:
+
+- An enable/disable toggle.
+- A volume slider ranging from 0% to 100%.
+- A clearly displayed current volume percentage.
+- A way to mute or restore music conveniently.
+- A sensible indication of whether background music is enabled.
+
+The volume slider must update actual audio playback in real time.
+
+The enable/disable toggle must genuinely start or stop the music as appropriate.
+
+When the user sets the volume to 0%, the music must be inaudible.
+
+Keep the music volume setting independent of UI sound effects.
+
+## 7.4 Music persistence
+
+Save the user's music preferences using the application's existing persistence architecture.
+
+Persist the following where appropriate:
+
+- Whether background music is enabled.
+- The selected music volume.
+- Any user-selected music preference supported by the interface.
+
+When the user reopens the application, restore the saved preferences.
+
+If the user has never changed the setting, use the required default volume of 20%.
+
+Do not reset the user's saved volume to 20% every time the home screen renders.
+
+Do not overwrite a saved preference simply because a component remounts.
+
+## 7.5 One persistent music player
+
+Use a single persistent background music controller or audio instance where appropriate.
+
+The music must not restart every time the user:
+
+- Opens a conversation.
+- Switches conversations.
+- Opens settings.
+- Returns to the home screen.
+- Changes the selected model.
+- Changes between application views.
+
+Avoid creating duplicate audio elements or starting the same track multiple times.
+
+Ensure the music controller does not accidentally play multiple overlapping copies of the same track.
+
+The audio should continue appropriately while navigating within the application.
+
+## 7.6 Looping and seamless playback
+
+I want the background music to repeat continuously while it is enabled.
+
+However, simply setting `loop = true` does not guarantee a seamless transition. The source file must also have compatible audio at its beginning and end.
+
+Implement looping using the best available approach.
+
+If the supplied file loops naturally, use the browser's looping functionality.
+
+If the track contains an audible ending, silence, or an incompatible transition that makes the restart noticeable, do not pretend that enabling looping fixes it.
+
+Instead:
+
+1. Determine whether the audio file already has a suitable loop point, if the available tooling permits this.
+2. If it does not, explain that the source audio needs to be edited into a loop-compatible version.
+3. If audio editing is supported in the current environment, create a loop-compatible asset while preserving the original file.
+4. If audio editing is unavailable, keep the original track intact and tell me exactly what is needed to achieve a genuinely seamless loop.
+
+A very subtle crossfade or a professionally prepared loop may be used if it improves continuity and is technically appropriate.
+
+Do not introduce a noticeable volume jump or gap at the loop boundary.
+
+The desired result is continuous, calm music with no obvious restart.
+
+## 7.7 Browser autoplay restrictions
+
+Respect browser autoplay policies.
+
+Do not attempt to bypass browser restrictions.
+
+If playback requires a user gesture, provide an elegant and clear interaction, such as an unobtrusive enable-music control or a suitable start-audio action.
+
+Do not make the user repeatedly click the music button during normal navigation.
+
+Once the user has enabled playback through a valid interaction, preserve that playback state as consistently as browser rules permit.
+
+If playback is blocked or fails, handle the error gracefully.
+
+Do not show a false success message when the audio has not started.
+
+Do not make the entire application unusable just because background music cannot autoplay.
+
+## 7.8 Music loading and cleanup
+
+Load the audio efficiently.
+
+Avoid downloading or initializing multiple copies of the file unnecessarily.
+
+Handle missing assets and playback errors without crashing the application.
+
+If the user disables music, stop or pause playback appropriately.
+
+Ensure that audio event listeners and resources are cleaned up correctly when the application truly unmounts.
+
+Avoid restarting music unnecessarily when React components rerender.
+
+---
+
+# PHASE 8 — ADD REAL UI CLICK SOUNDS AND INTERACTION SOUND EFFECTS
+
+In addition to the background music, I want the application to have subtle interface sound effects.
+
+These effects should add a premium, tactile feeling to interactions without making the interface noisy or annoying.
+
+## 8.1 Default UI sound volume: 10%
+
+Set the default UI sound-effects volume to exactly **10%**.
+
+The effective initial volume should be `0.10` on the standard 0-to-1 audio volume scale.
+
+For example, the intended initial value is equivalent to:
+
+`uiSoundVolume = 0.10`
+
+Adapt the implementation to the project's existing state-management and audio architecture.
+
+The UI sound volume must be independent of the background music volume.
+
+The defaults must be:
+
+- Background music: **20%**.
+- UI sound effects: **10%**.
+
+Do not accidentally use the same state variable for both.
+
+## 8.2 Sound design
+
+Use short, quiet, original or properly licensed interface sound effects.
+
+The desired character is inspired by the refined feedback of a premium console interface, but the sounds must not be copied from proprietary PlayStation system software or taken from unauthorized sources.
+
+Suitable sound characteristics include:
+
+- Soft, subtle button clicks.
+- A gentle selection sound.
+- A restrained confirmation sound.
+- A quiet navigation sound where useful.
+
+Keep effects short and understated.
+
+Do not use loud notification sounds, arcade effects, exaggerated beeps, or repetitive mechanical noises.
+
+Do not play sounds for every tiny visual update.
+
+## 8.3 Interaction mapping
+
+Where appropriate, add sound effects to meaningful interactions such as:
+
+- Clicking a primary action.
+- Selecting a navigation item.
+- Opening a menu.
+- Confirming a setting.
+- Switching between supported navigation views.
+- Completing a meaningful action.
+
+Use judgment about which interactions deserve audio feedback.
+
+Do not play sounds for every keystroke in the chat input.
+
+Do not play click sounds continuously while an animation runs.
+
+Do not repeatedly play a sound because a component rerendered.
+
+Do not play the same effect multiple times for one user action.
+
+## 8.4 Functional sound controls
+
+Add a dedicated UI sound-effects section to settings.
+
+Include:
+
+- An enable/disable toggle.
+- A volume slider from 0% to 100%.
+- A displayed volume percentage.
+- A way to mute and restore sound effects.
+
+Changes must affect actual sound playback immediately.
+
+If the user disables sound effects, no UI sound effect should be played.
+
+If the volume is set to 0%, all UI sound effects must be inaudible.
+
+## 8.5 Persistence
+
+Persist the UI sound preferences independently from the music preferences.
+
+On first use, the UI sound volume must default to 10%.
+
+After the user changes the volume, restore their saved choice when they reopen the application.
+
+Do not overwrite an existing saved preference with the default on every render.
+
+Keep the settings predictable and reliable.
+
+## 8.6 Audio implementation
+
+Use a reliable approach suitable for the existing framework.
+
+Depending on the project, this may involve:
+
+- Small audio assets.
+- Reusable audio instances.
+- A lightweight sound manager.
+- Web Audio API, if genuinely beneficial and appropriate.
+
+Avoid creating a new audio object unnecessarily for every render.
+
+Prevent overlapping sound playback when it is not intended.
+
+Handle failed audio loading gracefully.
+
+Respect browser audio policies and avoid autoplaying interaction sounds before the user interacts with the application.
+
+Do not let audio errors break navigation, settings, or chat functionality.
+
+---
+
+# PHASE 9 — BUILD A PROPER AUDIO AND ANIMATION SETTINGS CONTROL CENTER
+
+Integrate the new features into the existing settings system rather than creating a disconnected settings page.
+
+The settings interface should look like a polished control center that matches the redesigned application.
+
+If the project already has a settings modal with tabs, preserve the existing tabs and capabilities while improving the design and organizing the new settings logically.
+
+Do not remove existing settings to make room for audio or animation controls.
+
+## 9.1 Recommended settings organization
+
+Create or adapt the following logical groups.
+
+### Appearance
+
+Include:
+
+- Theme-related options already supported by the application.
+- Animated ambient waves: enabled/disabled.
+- Any relevant visual settings that already exist.
+
+### Background music
+
+Include:
+
+- Background music enabled/disabled.
+- Music volume slider.
+- Current volume percentage.
+- A clear indication that the selected music is `003. Home Menu.mp3`, when that asset is available.
+- Any appropriate playback-status feedback.
+
+### UI sound effects
+
+Include:
+
+- UI sound effects enabled/disabled.
+- Sound-effects volume slider.
+- Current volume percentage.
+
+### Existing application settings
+
+Preserve the existing model, persona, search-grounding, memory, data, and other configuration features supported by the current project.
+
+Do not invent fake settings for functionality that the application does not actually have.
+
+## 9.2 Settings layout
+
+Use a clean hierarchy with section titles, descriptions, and consistent spacing.
+
+Each control should explain what it changes.
+
+Use readable labels rather than cryptic technical names.
+
+For example:
+
+**Animated ambient waves**
+
+“Enable or disable the flowing blue and violet background lighting.”
+
+**Background music**
+
+“Control the ambient home-screen music.”
+
+**Interface sound effects**
+
+“Control the sounds played during interface interactions.”
+
+These are suggested labels and descriptions; adjust them to fit the final interface.
+
+## 9.3 Volume sliders
+
+Both audio sliders must have:
+
+- A minimum value of 0%.
+- A maximum value of 100%.
+- A current percentage label.
+- A visible track and thumb.
+- A clear focus state.
+- Keyboard accessibility.
+- Immediate playback updates.
+- Persistent preferences.
+
+The sliders must control separate values.
+
+Changing the music slider must not change the UI sound slider.
+
+Changing the UI sound slider must not change the music slider.
+
+Make the sliders visually consistent with the cyan-blue-violet design language.
+
+## 9.4 State management and persistence
+
+Use the application's existing settings state and persistence mechanisms wherever possible.
+
+Avoid creating multiple conflicting copies of the same preference.
+
+Use clear, separate values for:
+
+- Background music enabled state.
+- Background music volume.
+- UI sound enabled state.
+- UI sound volume.
+- Ambient waves enabled state.
+
+Use the existing storage or settings service where appropriate.
+
+If the project already synchronizes settings with a backend, preserve that behavior and follow its established patterns.
+
+Do not introduce an entirely separate persistence system without a good reason.
+
+Ensure that settings changes do not trigger unrelated resets or overwrite other saved preferences.
+
+---
+
+# PHASE 10 — CREATE SMOOTH, COHESIVE ANIMATIONS THROUGHOUT THE UI
+
+The interface should feel fluid and responsive, not static.
+
+Use animation to communicate interaction and hierarchy, not just decoration.
+
+Appropriate examples include:
+
+- Gentle home-screen entrance transitions.
+- Smooth sidebar expansion and collapse.
+- Subtle hover transitions.
+- Small button press feedback.
+- Smooth settings-panel transitions.
+- Refined modal opening and closing.
+- Carefully controlled card transitions.
+- Subtle focus transitions for the message composer.
+- Continuous ambient background waves.
+
+Use consistent timing and easing throughout the application.
+
+Avoid excessively long transitions that make the app feel slow.
+
+Avoid animation on every element simultaneously.
+
+Avoid bouncing, spinning, flashing, or aggressive zoom effects unless there is a clear purpose.
+
+The interface should remain responsive even when the user interacts quickly.
+
+## Reduced-motion support
+
+Respect `prefers-reduced-motion`.
+
+When reduced motion is enabled, reduce or disable nonessential animations, especially continuous background movement.
+
+Do not remove essential interaction feedback or make the interface confusing.
+
+The background should remain visually attractive even without animation.
+
+## State and rendering stability
+
+Animations must not break application state.
+
+Avoid unnecessary remounting that resets the message composer, restarts audio, resets the active conversation, or causes background animations to jump.
+
+Use stable component structures and state management.
+
+---
+
+# PHASE 11 — RESPONSIVE DESIGN
+
+The application should work well on desktop, laptop, tablet, and mobile screens.
+
+## Desktop and laptop
+
+Prioritize the cinematic layout, sidebar, generous spacing, atmospheric waves, and comfortable chat width.
+
+Use available space intelligently without stretching text to an uncomfortable width.
+
+## Tablet
+
+Adapt the sidebar, spacing, card layout, and settings panels.
+
+Ensure that the message composer remains usable and that important controls do not disappear.
+
+## Mobile
+
+Keep the interface readable and functional.
+
+Avoid oversized hero elements that push the message composer off-screen.
+
+Make controls large enough to interact with comfortably.
+
+Ensure the sidebar and settings can be opened and closed reliably.
+
+Reduce background animation complexity if necessary.
+
+Prevent horizontal overflow.
+
+Ensure that modals and settings fit within the viewport.
+
+Do not sacrifice chat functionality just to preserve the desktop appearance.
+
+---
+
+# PHASE 12 — ACCESSIBILITY AND USABILITY
+
+The premium appearance must not compromise usability.
+
+Ensure:
+
+- Sufficient text contrast.
+- Visible keyboard focus.
+- Semantic buttons and inputs.
+- Accessible names for icon-only controls.
+- Keyboard-operable menus and settings.
+- Clear disabled states.
+- Appropriate form labels.
+- Reduced-motion support.
+- Readable text over animated backgrounds.
+- Appropriate touch targets on mobile.
+
+Do not rely exclusively on color to communicate whether a control is enabled or disabled.
+
+Make toggle states obvious.
+
+Keep important information visible even when animations or audio are disabled.
+
+The application must remain fully usable with background music off, sound effects off, and animated waves off.
+
+---
+
+# PHASE 13 — CODE QUALITY AND TECHNICAL REQUIREMENTS
+
+Implement the redesign using clean, maintainable code.
+
+## 13.1 Component structure
+
+Create reusable components when appropriate.
+
+Potential components include:
+
+- A shared animated background.
+- A reusable NovaChat logo component.
+- A persistent background music controller.
+- A UI sound-effects manager.
+- Reusable volume sliders.
+- Reusable settings sections.
+- Shared button and card styles.
+
+These are implementation suggestions, not requirements to create unnecessary files.
+
+Fit the solution to the existing architecture.
+
+## 13.2 React and state management
+
+If the application uses React, handle component lifecycle and audio state carefully.
+
+Avoid:
+
+- Duplicated audio players.
+- Event listeners that accumulate.
+- Unnecessary component remounts.
+- Stale state inside event handlers.
+- State updates during inappropriate lifecycle phases.
+- Settings that reset on rerender.
+- Unnecessary global state.
+- Effects that repeatedly restart animations or music.
+- Memory leaks from uncleaned listeners or resources.
+
+Use stable callbacks and effect cleanup where appropriate.
+
+Avoid overengineering.
+
+## 13.3 CSS and visual effects
+
+Organize the styles so that the new visual system is easy to maintain.
+
+Use reusable design tokens for colors, borders, radii, spacing, and animation timing.
+
+Avoid uncontrolled global CSS changes that break existing components.
+
+Ensure that the animated background stays behind the UI and does not intercept pointer events.
+
+Use appropriate stacking contexts for modals, menus, and overlays.
+
+## 13.4 Asset handling
+
+Use project-managed assets for the original logo, music, and any sound effects.
+
+Do not depend on unreliable third-party URLs for core visual or audio features.
+
+Do not fabricate file paths.
+
+If a required asset is missing, identify the missing asset clearly and explain how it should be added.
+
+## 13.5 No fake implementation
+
+Do not add controls that only change their appearance.
+
+Do not make a volume slider that does not affect the sound.
+
+Do not make a music toggle that only changes its label.
+
+Do not create a fake animated-wave switch that has no effect.
+
+Do not simulate AI responses.
+
+Do not claim that a file has been loaded, audio is playing, or a setting is saved unless the implementation actually supports that behavior.
+
+---
+
+# PHASE 14 — TEST THE ACTUAL IMPLEMENTATION
+
+After implementing the redesign, verify the actual application.
+
+Do not stop after writing the code or showing a screenshot.
+
+Run the available project checks and fix errors caused by your changes.
+
+## 14.1 Visual checks
+
+Verify:
+
+- The home screen has the intended premium, cinematic appearance.
+- The original NovaChat logo remains recognizable.
+- The logo's line extensions are restrained.
+- The cyan-blue-violet gradient and glow look polished.
+- The animated waves are actually moving.
+- The waves remain behind the interface.
+- Text remains readable.
+- The chat screen looks cohesive with the home screen.
+- The settings interface matches the new design.
+- Buttons and controls have appropriate hover, focus, disabled, and active states.
+- Modals appear above the background correctly.
+
+## 14.2 Audio checks
+
+Verify:
+
+- The correct `003. Home Menu.mp3` file is used when it is available.
+- The default background music volume is 20%.
+- The default UI sound-effects volume is 10%.
+- The two volume controls are independent.
+- The music toggle genuinely controls music playback.
+- The sound-effects toggle genuinely controls UI sounds.
+- A volume of 0% produces silence for the relevant audio category.
+- Music does not restart when switching conversations or opening settings.
+- The same track is not played multiple times accidentally.
+- Looping works as intended.
+- If the source file has an audible loop boundary, do not claim it is seamless.
+- Audio loading failures do not crash the app.
+- Browser autoplay restrictions are handled properly.
+- Saved preferences persist after a reload.
+
+## 14.3 Animation checks
+
+Verify:
+
+- The waves move continuously.
+- There are no obvious jumps or abrupt restarts.
+- The animation does not block pointer events.
+- Navigation does not unnecessarily restart the background.
+- Disabling waves stops or removes the animated effect.
+- The static background still looks good when waves are disabled.
+- Reduced-motion preferences are respected.
+- The animation does not cause noticeable lag.
+
+## 14.4 Functional regression checks
+
+Verify that the redesign has not broken:
+
+- Creating a new chat.
+- Switching conversations.
+- Sending messages.
+- Receiving real AI responses.
+- Model selection.
+- Existing settings.
+- Existing memory functionality.
+- Existing data persistence.
+- Existing export and clearing actions.
+- Keyboard interaction.
+- Responsive navigation.
+
+Only test or modify the features that exist in the current application, but preserve them all.
+
+## 14.5 Build and runtime checks
+
+Use the project's existing tooling.
+
+Where available:
+
+- Run the build.
+- Run the existing type checker.
+- Run relevant tests.
+- Inspect the browser console.
+- Inspect runtime errors.
+- Verify asset loading.
+- Check for failed API calls caused by the changes.
+- Test the main screens at desktop and mobile sizes.
+
+Fix errors introduced by the redesign before declaring the work complete.
+
+---
+
+# PHASE 15 — FINAL IMPLEMENTATION REPORT
+
+When you have finished, provide a concise but useful summary of the actual changes.
+
+Report:
+
+1. Which screens and components were redesigned.
+2. How the original NovaChat logo was preserved and refined.
+3. How the ambient waves were implemented.
+4. How background music was connected.
+5. How UI sound effects were implemented.
+6. Where the new settings controls are located.
+7. How preferences are persisted.
+8. Which build checks and tests were run.
+9. Any problems that remain unresolved.
+10. Whether the exact music asset was available and verified.
+
+Clearly distinguish between features that are fully implemented, features that still need an asset from me, and features that could not be verified.
+
+If `003. Home Menu.mp3` is not available in the project, do not substitute another track. Tell me to add the exact file.
+
+If the original logo cannot be located, ask me to provide it rather than inventing a replacement.
+
+If a genuinely seamless audio loop requires editing the source file and you cannot perform that edit, state that clearly.
+
+Do not claim that tests passed if they were not run.
+
+---
+
+# FINAL DESIGN VISION
+
+The final NovaChat AI application should feel like a premium, futuristic AI environment with the atmosphere of a cinematic console home screen.
+
+The overall experience should combine:
+
+- A beautiful dark navy background.
+- Flowing blue, cyan, indigo, and violet ambient waves.
+- The original NovaChat logo, subtly refined with longer strokes and a polished gradient.
+- Elegant glassmorphism and layered surfaces.
+- A cinematic home screen.
+- A clean, powerful chat interface.
+- Smooth and responsive interactions.
+- The exact background music file `003. Home Menu.mp3`, at a default volume of 20%.
+- Subtle UI click and interaction sounds, at a default volume of 10%.
+- Independent audio controls.
+- A real animated-waves toggle.
+- Persistent settings.
+- Responsive layouts.
+- Full preservation of existing AI features and backend functionality.
+
+**The most important requirements are that the application remains fully functional, the original NovaChat identity is preserved, the waves are genuinely animated, the exact music asset is used when provided, and all audio and animation settings actually work.**
+
+Do not prioritize visual effects over usability or functionality.
+
+Do not deliver only a mockup, a static background, or a written plan.
+
+**Implement the complete redesign in the existing NovaChat AI project, test it, fix regressions, and report honestly what is finished.**
+
+Use the attached NovaChat AI UI reference image as the visual direction for my existing application. Recreate the overall premium, cinematic dark navy interface, cyan-blue-violet ambient waves, refined original inverted-V logo, glassmorphism, home screen, chat layout, settings panels, music controls, and UI sound controls. Treat the image as a visual reference, not a finished implementation. Implement real, functional components in my existing project, preserve all existing features, and use the detailed master prompt for exact requirements.
